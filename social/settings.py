@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'social.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
+DATABASES = {
 #     # 'default': {
 #     #     'ENGINE': 'django.db.backends.mysql',
 #     #     'NAME': 'Social-face',
@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'social.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-# }
+}
 
 
 
@@ -123,11 +123,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+import os
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 STATIC_URL = 'static/'
-STATIC_ROOT= BASE_DIR / 'saticfiles_build'
+# STATIC_ROOT= BASE_DIR / 'saticfiles_build'
+STATIC_ROOT = os.path.join(BASE_DIR ,'staticfiles_build','static')
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
